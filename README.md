@@ -70,3 +70,24 @@ schema에 대해서 알아보자
 ## chap 4
 
 schema는 네가 받거나 줄 정보에 대한 서술이라고 생각하면 댐
+
+---
+
+## chap 5
+
+**Graphql**
+typedefs와 resolver로 나뉜다.
+
+**typeDefs**
+
+> typedefs에는 내가 사용할 타입을 정의하거나, query, mutation을 작성
+
+> query -> 데이터를 조회할 때 사용
+> mutation -> 데이터를 입력 수정 삭제 할때 사용
+
+약속에 불과하지만 지켜주는게 좋음.
+
+**resolver**
+
+> 실질적인 기능을 작성하는 곳.
+> 앞서 타입과 질의들을 정해주었으니 어떤 작업들을 할건지를 작성하는 곳.
