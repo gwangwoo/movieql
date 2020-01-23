@@ -36,23 +36,23 @@ query {
 
 ```javascript
 {
-feed: [
-{
-comments:1,
-likeNumber: 20
-}
-],
-notifications: [
-{
-isRead: true
-},
-{
-isRead: false
-}
-],
-user: [
-username: "nico"
-profilePic: "http:"
-]
+    feed: [
+        {
+        comments:1,
+        likeNumber: 20
+        }
+    ],
+    notifications: [
+        {
+        isRead: true
+        },
+        {
+        isRead: false
+        }
+    ],
+    user: [
+        username: "nico"
+        profilePic: "http:"
+    ]
 }
 ```
