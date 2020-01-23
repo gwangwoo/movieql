@@ -18,20 +18,23 @@ REST에서 하나를 완성하려고 여러번 쿼리를 날림
 
 -- graphql에서는 이모든것들을 하나의 query로 만들 수 있음. --
 
+```graphql
 query {
-feed {
-comments
-likeNumber
+  feed {
+    comments
+    likeNumber
+  }
+  notifications {
+    isRead
+  }
+  user {
+    username
+    profilePic
+  }
 }
-notifications {
-isRead
-}
-user {
-username
-profilePic
-}
-}
+```
 
+```javascript
 {
 feed: [
 {
@@ -52,3 +55,4 @@ username: "nico"
 profilePic: "http:"
 ]
 }
+```
