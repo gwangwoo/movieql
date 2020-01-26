@@ -12,7 +12,7 @@ type Person {
 
 type Query {
   people: [Person]!
-  person(id: Int!): Person
+  person(id: Int!): Person!
 }
 
 # -- 우린 단지 어떤 사용자가 쿼리에 name을 보내면
