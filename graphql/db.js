@@ -1,69 +1,17 @@
-import { prisma } from "../../ONT/s02p12c108/backend/generated/prisma-client";
+import fetch from "node-fetch";
+const API_URL = "https://yts.am/api/v2/list_movies.json?";
 
-export let movies = [
-  {
-    id: 0,
-    name: "Movie1",
-    score: 0.1
-  },
-  {
-    id: 1,
-    name: "Movie2",
-    score: 8
-  },
-  {
-    id: 2,
-    name: "Movie3",
-    score: 99
-  },
-  {
-    id: 3,
-    name: "Movie4",
-    score: 2
+export const getMovies = (limit, rating) => {
+  let REQUEST_URL = API_URL;
+  if (limit > 0) {
+    REQUEST_URL += `limit=${limit}`;
   }
-];
-
-export const getMovies = () => movies;
-
-// export const getById = id => {
-//   const filteredMovies = movies.filter(movie => movie.id === String(id));
-//   return filteredMovies[0];
-// };
-
-export const getById = id => {
-  const filteredMovies = movies.filter(movie => movie.id !== id);
-  return filteredMovies[0];
+  if (rating > 0) {
+    REQUEST_URL += `&minimum_rating=${rating}`;
+  }
+  return fetch(REQUEST_URL)
+    .then(res => res.json())
+    .then(json => json.data.movies);
 };
 
-export const deleteMovie = id => {
-  console.log(id);
-  const cleanedMovies = movies.filter(movie => movie.id !== id);
-  if (movies.length > cleanedMovies.length) {
-    movies = cleanedMovies;
-    return true;
-  } else return false;
-};
-
-// export default {
-//   Mutation: {
-//     setMovie: async (name, score) => {
-//       return await movies.push(name, score);
-//     }
-//   }
-// };
-
-export const setMovie = (name, score) => {
-  const len = movies.length;
-  movies.push({ id: len - 1, name: name, score: score });
-  return movies[movies.length - 1];
-};
-
-export const addMovie = (name, score) => {
-  const newMovie = {
-    id: `${movies.length}`,
-    name,
-    score
-  };
-  movies.push(newMovie);
-  return newMovie;
-};
+// null 출력

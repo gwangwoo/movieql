@@ -3,23 +3,17 @@
 # Mutation 정보를 등록, 수정하거나 삭제할때 사용
 
 # 쿼리로 name을 보내면 프리스마는 String으로 return 해준다.
-
 type Movie {
   id: Int!
-  name: String!
-  score: Float!
+  title: String!
+  rating: Float!
+  summary: String!
+  language: String!
+  medium_cover_image: String!
 }
 
 type Query {
-  movies: [Movie]!
-  movie(id: Int!): Movie
-  getMovies: [Movie!]!
+  movies(limit: Int, rating: Float): [Movie]!
 }
-
-type Mutation {
-  addMovie(name: String!, score: Int!): Movie
-  deleteMovie(id: Int!): Boolean!
-}
-
 # -- 우린 단지 어떤 사용자가 쿼리에 name을 보내면
 # String을 보낸다는 설명만 했을뿐
