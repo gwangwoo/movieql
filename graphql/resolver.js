@@ -1,4 +1,4 @@
-import { movies, getMovies, getById } from "../graphql/db";
+import { movies, getMovies, getById, deleteMovie } from "../graphql/db";
 // import { getMovies } from "../graphql/db";
 // import { setMovie } from "../graphql/db";
 import { addMovie } from "../graphql/db";
@@ -9,7 +9,8 @@ const resolvers = {
     movie: (_, { id }) => getById(id)
   },
   Mutation: {
-    addMovie: (_, { name, score }) => addMovie(name, score)
+    addMovie: (_, { name, score }) => addMovie(name, score),
+    deleteMovie: (_, { id }) => deleteMovie(id)
   }
 };
 
