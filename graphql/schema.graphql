@@ -3,12 +3,6 @@
 # Mutation 정보를 등록, 수정하거나 삭제할때 사용
 
 # 쿼리로 name을 보내면 프리스마는 String으로 return 해준다.
-type Person {
-  id: Int!
-  name: String!
-  age: Int!
-  gender: String!
-}
 
 type Movie {
   id: Int!
@@ -17,8 +11,6 @@ type Movie {
 }
 
 type Query {
-<<<<<<< HEAD
-  person: Nicolas!
   movies: [Movie]!
   movie(id: Int!): Movie
   getMovies: [Movie!]!
@@ -26,10 +18,6 @@ type Query {
 
 type Mutation {
   addMovie(name: String!, score: Int!): Movie
-=======
-  people: [Person]!
-  person(id: Int!): Person!
->>>>>>> 757a3c875e3afb48bdddc3b503d0049b1eb6c19d
 }
 
 # -- 우린 단지 어떤 사용자가 쿼리에 name을 보내면
