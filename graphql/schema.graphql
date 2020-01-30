@@ -9,8 +9,21 @@ type Nicolas {
   gender: String!
 }
 
+type Movie {
+  id: Int!
+  name: String!
+  score: Float!
+}
+
 type Query {
   person: Nicolas!
+  movies: [Movie]!
+  movie(id: Int!): Movie
+  getMovies: [Movie!]!
+}
+
+type Mutation {
+  addMovie(name: String!, score: Int!): Movie
 }
 
 # -- 우린 단지 어떤 사용자가 쿼리에 name을 보내면

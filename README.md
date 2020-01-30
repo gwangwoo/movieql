@@ -2,7 +2,7 @@
 
 Movie API with Graphql
 
-## 2강
+## chap 2
 
 under- fetching
 over - fetching
@@ -91,3 +91,5 @@ typedefs와 resolver로 나뉜다.
 
 > 실질적인 기능을 작성하는 곳.
 > 앞서 타입과 질의들을 정해주었으니 어떤 작업들을 할건지를 작성하는 곳.
+
+---
